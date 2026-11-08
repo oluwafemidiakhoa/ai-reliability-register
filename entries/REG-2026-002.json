@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "auditor": {
+    "name": "Oluwafemi Idiakhoa",
+    "orcid": "0009-0008-7911-1171",
+    "self_audit": false
+  },
+  "sealed": {
+    "id": "REG-2026-002",
+    "target": {
+      "name": "Biomedical-RAG-Agent",
+      "url": "https://github.com/Lawson-Darrow/Biomedical-RAG-Agent",
+      "version": "commit 125a64ff7d6a81fead7eb0fd89c3fe5aa4a430d0 (2026-06-05)",
+      "owner": "Lawson-Darrow (GitHub)"
+    },
+    "claim": {
+      "text": "Retrieval is doing real work. Closed-book (no retrieval) scores 0.45 task accuracy; the same model with hybrid RAG scores 0.63 — a +18-point lift.",
+      "source": "https://github.com/Lawson-Darrow/Biomedical-RAG-Agent/blob/125a64ff7d6a81fead7eb0fd89c3fe5aa4a430d0/REPORT.md",
+      "location": "REPORT.md, TL;DR, lines 11-12"
+    },
+    "checks": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "N1",
+      "N2",
+      "N3",
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "prediction": null,
+    "confidence": null,
+    "sealed_at": "2026-11-08T00:56:50Z",
+    "seal_hash": "9f95c3fd12644ea27858a9e8bdcb2352ecffebbacfc09b47de088377eb9a3d0a"
+  },
+  "open": {
+    "result": {
+      "summary": "The harness reproduces: with providers pinned to those in the published run where they still exist, accuracy is within 0.02, macro-F1 within 0.01, faithfulness within 0.01, retrieval within 0.01 and citation accuracy within 0.04 of the published values. The +18-point accuracy lift is measured against a closed-book baseline that scores below always answering 'yes'; against that trivial baseline the RAG lift is +0.00 to +0.04, within one standard error (n=150, SE 0.040). On macro-F1, which the report also publishes, retrieval clearly beats every trivial baseline (+0.16 to +0.18). No harness measurement error was found; every finding concerns reporting.",
+      "findings": [
+        {
+          "id": "F1",
+          "checks": [
+            "T6",
+            "T1"
+          ],
+          "finding": "The TL;DR leads with an accuracy lift (+18) measured against a closed-book baseline that loses to always-yes; macro-F1, published alongside, shows the clear lift.",
+          "class": "framing"
+        },
+        {
+          "id": "F2",
+          "checks": [
+            "T1"
+          ],
+          "finding": "No trivial baseline appears anywhere in REPORT.md or the README, on either metric.",
+          "class": "omission"
+        },
+        {
+          "id": "F3",
+          "checks": [
+            "T3",
+            "S1",
+            "S2"
+          ],
+          "finding": "Faithfulness is computed on judged answers only (75-97% of 150, depending on model) and does not state its coverage; when retrieval fails the system abstains rather than staying faithful.",
+          "class": "omission"
+        },
+        {
+          "id": "F4",
+          "checks": [
+            "T4"
+          ],
+          "finding": "Faithfulness and correctness are weakly associated (phi 0.08-0.22): 71-86% of wrong answers are judged faithful.",
+          "class": "omission"
+        },
+        {
+          "id": "F5",
+          "checks": [
+            "S3"
+          ],
+          "finding": "Citation accuracy is judge-dependent (largest change in a model's mean 0.14 across three cross-family judges); faithfulness and hallucination are robust (largest change 0.03). The single-judge limitation was flagged in the report but not quantified.",
+          "class": "omission"
+        },
+        {
+          "id": "F6",
+          "checks": [
+            "N1",
+            "N2"
+          ],
+          "finding": "Unpinned routing sent all four generators to providers other than the published ones, and the judge provider was not recorded; deepseek/deepseek-v3.2 returned HTTP 410 on the published route about four months after the commit, so the published run cannot be exactly reproduced.",
+          "class": "omission"
+        }
+      ],
+      "not_performed": [
+        "C1-C4: not applicable; the target is a one-off research harness with no archive, no persisted production output and a fixed corpus."
+      ]
+    },
+    "outcome": "claim_partly_holds",
+    "cost": {
+      "api_usd": "7.51",
+      "note": "Gateway-reported spend over 5 runs (1 discarded). Elapsed time from clone to findings about 8.5 hours, alongside other work; auditor time not recorded."
+    },
+    "author_contacted": false,
+    "published_at": null
+  },
+  "notes": [
+    "Recorded retrospectively on 7 November 2026 (US Central time; sealed_at is 8 November in UTC), after the audit runs were complete. The prediction seal began at entry REG-2026-003; this entry has no prediction, and its seal proves only that it has not changed since it was sealed.",
+    "Findings are drafts and unpublished. Under the protocol's contact rule, the target's author sees them first, with a 14-day response window, before publication. author_contacted is false because no message has been sent yet; update it with the date when one is."
+  ]
+}

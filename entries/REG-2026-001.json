@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "auditor": {
+    "name": "Oluwafemi Idiakhoa",
+    "orcid": "0009-0008-7911-1171",
+    "self_audit": true
+  },
+  "sealed": {
+    "id": "REG-2026-001",
+    "target": {
+      "name": "GaiaLab (deployed biomedical hypothesis-generation system)",
+      "url": "https://www.gailabai.com",
+      "version": "production analysis archive, 4 June to 28 October 2026: 5,578 records, 5,504 carrying the full internal metric block",
+      "owner": "Oluwafemi Idiakhoa"
+    },
+    "claim": {
+      "text": "The grounding value shown in the analysis interface as the headline grounding figure (\"Grounded ratio\"), including \"complete grounding\" (1.00) on 475 publicly reachable analyses.",
+      "source": "https://doi.org/10.5281/zenodo.23838126",
+      "location": "Preprint: Abstract and Results, 'Divergence by magnitude' (pp. 1 and 5)"
+    },
+    "checks": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "prediction": null,
+    "confidence": null,
+    "sealed_at": "2026-11-08T00:56:50Z",
+    "seal_hash": "f84cfcba5226d0548727fbf102df9c0331bea20ebdd811b832ce95c8dc6faea0"
+  },
+  "open": {
+    "result": {
+      "summary": "In 4,804 of 5,504 archived analyses (87.3%) the grounding value shown to users differed from the system's own trust-adjusted grounding value on the same record (mean 0.757 against 0.347). In 475 publicly reachable analyses the interface showed complete grounding (1.00) while the trust-adjusted value was 0.00; these runs were not empty. The system's own share-readiness flag was set on 0.56% of runs while the interface displayed complete grounding on 46.7%. A separate reconciliation found 18 committed leaves across 3 Bitcoin-anchored Merkle roots permanently unresolvable after a maintenance job deleted the records behind them.",
+      "findings": [
+        {
+          "id": "F1",
+          "checks": [
+            "T3",
+            "T5"
+          ],
+          "finding": "The displayed grounding ratio was computed during synthesis, before evidence gating removed assertions, so it described a superseded object rather than the findings in the final record.",
+          "class": "measurement"
+        },
+        {
+          "id": "F2",
+          "checks": [
+            "T2"
+          ],
+          "finding": "The mean (0.757 displayed against 0.347 trust-adjusted) hid 475 runs at 1.00 against 0.00 and 700 runs where the two were equal.",
+          "class": "omission"
+        },
+        {
+          "id": "F3",
+          "checks": [
+            "T4"
+          ],
+          "finding": "The grounding label, the citation grade and citation-F1 ordered the same runs differently; seven 'high' runs displayed 1.000 with mean citation-F1 under 0.25, four of them graded D.",
+          "class": "omission"
+        },
+        {
+          "id": "F4",
+          "checks": [
+            "T6"
+          ],
+          "finding": "The interface led with complete grounding on 46.7% of runs while the system's own share-readiness flag was set on 0.56%.",
+          "class": "framing"
+        },
+        {
+          "id": "F5",
+          "checks": [
+            "T1"
+          ],
+          "finding": "'81% validated' (12,588 of 15,479 ledger predictions with an outcome) counted a trial that already existed as a validation; under a definition requiring a trial registered after the prediction, the count is 0.",
+          "class": "framing"
+        },
+        {
+          "id": "F6",
+          "checks": [
+            "C1"
+          ],
+          "finding": "Of 47 Merkle roots reconciled against two tables, 40 resolve, 2 were re-committed (75 leaves), 2 were released by design (65 leaves) and 3 hold 18 leaves that can no longer be resolved.",
+          "class": "measurement"
+        },
+        {
+          "id": "F7",
+          "checks": [
+            "C2"
+          ],
+          "finding": "Trigger provenance could not be determined for 46.0% of the anchored ledger.",
+          "class": "omission"
+        },
+        {
+          "id": "F8",
+          "checks": [
+            "C3"
+          ],
+          "finding": "On 31 October 2026, 48 catalog sources returned usable data; 14 failed (every request, answered without data, intermittent, or wrong data); 5 credential-gated sources were not checked, against a published headline that counted 48 of 75.",
+          "class": "measurement"
+        }
+      ],
+      "not_performed": [
+        "C4: not performed. The 475 records were corrected by a read-path change; 'no stored record altered' rests on the design, not on record-by-record verification.",
+        "C1: per-record content hashes against stored rows were not checked; only Merkle roots were reconciled.",
+        "C2: model version and source versions per record were not examined; only trigger provenance.",
+        "N1, N2, N3: not run; they were added to the protocol after this audit."
+      ],
+      "report": "https://doi.org/10.5281/zenodo.23838126"
+    },
+    "outcome": "claim_fails",
+    "cost": {
+      "api_usd": "0.00",
+      "note": "Read-only SQL queries against the production archive; no paid model calls. Auditor time was not recorded."
+    },
+    "author_contacted": null,
+    "published_at": "2026-10-31"
+  },
+  "notes": [
+    "Recorded retrospectively on 7 November 2026 (US Central time; sealed_at is 8 November in UTC), after the audit was published. The prediction seal began at entry REG-2026-003; this entry has no prediction, and its seal proves only that it has not changed since it was sealed.",
+    "Self-audit: the auditor built and operates the audited system, so the audit cannot establish independence. author_contacted is null because there is no separate author to contact.",
+    "Corrections published on the audited system's validation page as of 7 November 2026: https://www.gailabai.com/validation#correction-grounding-2026-10-29 (grounding headline, 29 Oct); #prediction-ledger-correction-2026-10-29 (prediction ledger, 29 Oct); #kegg-gene-resolution-correction-2026-11-01 (KEGG gene resolution, 1 Nov); #ledger-provenance-correction-2026-11-01 (where ledger predictions came from, 1 Nov); #source-audit-correction-2026-11-05 (what the data sources returned, 5 Nov); #validated-definition-correction-2026-11-06 (what 'validated' meant, 6 Nov); #lassa-v11-unscoreable-correction-2026-11-06 (LassaAI study cannot be scored, 6 Nov); #regulatory-safety-display-correction-2026-11-06 (safety lookups that showed reassurance, 6 Nov).",
+    "Finding F8's denominator (48 of 70 checked, or 48 of 63 live checked if shipped tables and the system's own model are also excluded) is under review; see the audited system's validation page for the published figure."
+  ]
+}
