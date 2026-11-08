@@ -109,6 +109,7 @@
   },
   "notes": [
     "Recorded retrospectively on 7 November 2026 (US Central time; sealed_at is 8 November in UTC), after the audit runs were complete. The prediction seal began at entry REG-2026-003; this entry has no prediction, and its seal proves only that it has not changed since it was sealed.",
-    "Findings are drafts and unpublished. Under the protocol's contact rule, the target's author sees them first, with a 14-day response window, before publication. author_contacted is false because no message has been sent yet; update it with the date when one is."
+    "Findings are drafts and unpublished. Under the protocol's contact rule, the target's author sees them first, with a 14-day response window, before publication. author_contacted is false because no message has been sent yet; update it with the date when one is.",
+    "author_contacted is false and correct: the message to the target's author, Lawson Darrow, exists as a draft and has not been sent. The protocol's 14-day contact rule was adopted after this audit, so this entry predates it."
   ]
 }
