@@ -104,12 +104,11 @@
       "api_usd": "7.51",
       "note": "Gateway-reported spend over 5 runs (1 discarded). Elapsed time from clone to findings about 8.5 hours, alongside other work; auditor time not recorded."
     },
-    "author_contacted": false,
+    "author_contacted": "2026-11-06",
     "published_at": null
   },
   "notes": [
     "Recorded retrospectively on 7 November 2026 (US Central time; sealed_at is 8 November in UTC), after the audit runs were complete. The prediction seal began at entry REG-2026-003; this entry has no prediction, and its seal proves only that it has not changed since it was sealed.",
-    "Findings are drafts and unpublished. Under the protocol's contact rule, the target's author sees them first, with a 14-day response window, before publication. author_contacted is false because no message has been sent yet; update it with the date when one is.",
-    "author_contacted is false and correct: the message to the target's author, Lawson Darrow, exists as a draft and has not been sent. The protocol's 14-day contact rule was adopted after this audit, so this entry predates it."
+    "Findings are drafts and unpublished. The target's author, Lawson Darrow, was emailed on 2026-11-06 with four attachments: FINDINGS.md, EXAMPLES.md, harness_logging.diff and RUNS.md. Under the protocol's contact rule, stated in that email, the author has 14 days to respond before publication, so the deadline is 2026-11-20. A response is pending."
   ]
 }
