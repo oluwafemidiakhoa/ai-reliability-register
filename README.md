@@ -30,6 +30,7 @@ The audits follow a published protocol; see [PROTOCOL.md](PROTOCOL.md).
 | `INDEX.md` | Table of all entries (generated) |
 | `GOVERNANCE.md` | Contribution, disputes, corrections, succession |
 | `PROTOCOL.md` | Pointer to the audit protocol |
+| `protocol/V0_3_CHANGES.md` | Proposed protocol changes collected for the next version |
 
 ## How to read an entry
 

@@ -14,3 +14,6 @@ S1–S4) and the finding classes (measurement, omission, framing) are defined th
 Entries REG-2026-001 and REG-2026-002 were audited before version 0.2 was published, under its
 earlier versions (v0 and v0.1, described in the protocol's version history). Their check
 identifiers use the v0.2 names.
+
+Proposed changes for the next version are collected in
+[protocol/V0_3_CHANGES.md](protocol/V0_3_CHANGES.md). They do not amend the published version.
